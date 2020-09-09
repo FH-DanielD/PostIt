@@ -1,0 +1,117 @@
+<!--Thymeleaf namespace needed by thymeleaf (?)-->
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Messages</title>
+<!--Used for bootstrap usage... Used for comfort reasons-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+		
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+			}
+
+			#wrapper {
+				height: 100vh;
+				flex-flow:column;
+			}
+
+			#title {
+				font-size: 20pt;
+				padding: 20px 10px;
+				border-bottom: 1px #000000 solid;
+			}
+
+			
+			#chatLog {
+				flex-grow: 1;
+			}
+
+			#chatLog > .container-fluid {
+				height: calc(100vh - 435px);
+				width: 100%;
+				overflow-y: auto;
+			}
+
+			#input {
+				width: 100%;
+				padding: 20px 10px;
+				border-top: 1px solid #000000;
+			}
+
+			.messageArea{
+				width: 100%;
+				resize:none;
+				overflow-y: auto;
+			}
+
+			.nameInput {
+				width: 100%;
+			}
+
+			input[type="submit"] {
+				background-color: #008cff;
+				border: 1px solid #000000;
+				color: white;
+				padding: 4px 15px;
+				border-radius: 10px;
+			}
+
+			form > .row {
+				margin-bottom: 20px;
+			}
+			#chatLogContainer > div {
+				max-width: 100%;
+			}
+			
+			.msg{
+				overflow-wrap: break-word;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="container-fluid" id="wrapper">
+<!--Part for the Title-->
+			<div class="row" id="title">
+				PostIt
+			</div>
+<!--Print messages from given list on screen if list not empty-->
+			<div class="row" id="chatLog">
+				<div class="container-fluid" id="chatLogContainer">
+					<div th:if="${#lists.isEmpty(messages)}">
+						<p> There are no messages </p>
+					</div>
+					<div th:each="msg : ${messages}">
+						<p class="msg" th:text="${#strings.toString(msg)}"/>
+					</div>
+				</div>
+			</div>
+
+<!--Form section-->
+			<div class="row" id="input">
+				<div class="container-fluid">
+					<form action="#" th:action="@{/index}" th:object="${message}" method="post">
+						<div class="row">
+							<div class="col-2">Name</div>
+							<div class="col-8">
+								<input class="nameInput" type="text" name="chat_name" th:field="*{name}" placeholder="Name" required="required">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-2">Message</div>
+							<div class="col-8">
+								<textarea class="messageArea" rows="10" name="chat_message" th:field="*{message}" placeholder="Message" required="required"></textarea>
+							</div>
+							<div class="col-2 align-self-end">
+								<input type="submit">
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>

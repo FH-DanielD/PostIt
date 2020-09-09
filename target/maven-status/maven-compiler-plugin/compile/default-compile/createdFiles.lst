@@ -1,0 +1,4 @@
+com\SuperGlue\PostIt\Repository\PostItMessageRepository.class
+com\SuperGlue\PostIt\PostItApplication.class
+com\SuperGlue\PostIt\Model\PostItMessage.class
+com\SuperGlue\PostIt\Controller\PostItController.class

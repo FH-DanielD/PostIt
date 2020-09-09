@@ -31,7 +31,7 @@ To test the application run the application in your IDE and open the following l
 http://localhost:8085/index
 
 If you have changed the port replace "8085" with the given port.
-----------------------------------------------------------------------------------------------------------------------------------------------
+
 Alternatively you can use following command to create a docker container from an image created by the dockerfile: 
 Fill the Elements in the Brackets!
 
