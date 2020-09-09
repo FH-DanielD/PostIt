@@ -26,13 +26,20 @@ To change the port of the PostIt-application:
 2. Change the number behind server.port
 
 
-To test the application open "Google Chrome" and open 
+To test the application run the application in your IDE and open the following link in "Google Chrome" 
 
 http://localhost:8085/index
 
 If you have changed the port replace "8085" with the given port.
+----------------------------------------------------------------------------------------------------------------------------------------------
+Alternatively you can use following command to create a docker container from an image created by the dockerfile: 
+Fill the Elements in the Brackets!
 
+docker run --name PostIt_application -p [Application-Port]:[Application-Port] --network postit_default postit --server.port=[Application-Port] --spring.datasource.url=jdbc:postgresql://postit_db_1:[PostgreSQL-Port]/postit
 
+After successfully starting the docker container open "Google Chrome" and enter following link:
+
+http://localhost:[Application-Port]/index
 
 
 Known Bugs: 
@@ -42,7 +49,7 @@ Known Bugs:
 -Missing Tests
 -Chat not scrolled down on refresh (due to not using JavaScript)
 -Missing Custom Logs 
--Networking between docker-containers not working
+-Networking between docker-containers might be wonky - There has not been enough testing
 
 Not Tested:
 -Manually sending POST-Requests
