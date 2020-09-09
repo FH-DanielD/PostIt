@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"com.SuperGlue.PostIt","l":"PostItApplication"},{"p":"com.SuperGlue.PostIt.Controller","l":"PostItController"},{"p":"com.SuperGlue.PostIt.Model","l":"PostItMessage"},{"p":"com.SuperGlue.PostIt.Repository","l":"PostItMessageRepository"}]

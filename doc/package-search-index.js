@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.SuperGlue.PostIt"},{"l":"com.SuperGlue.PostIt.Controller"},{"l":"com.SuperGlue.PostIt.Model"},{"l":"com.SuperGlue.PostIt.Repository"}]
