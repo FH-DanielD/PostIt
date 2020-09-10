@@ -43,14 +43,14 @@ http://localhost:[Application-Port]/index
 
 
 Known Bugs: 
--Errors not handled (No Error-redirect or Error-page)
--No custom limit to message- and name-length
--No delete function
--Missing Tests
--Chat not scrolled down on refresh (due to not using JavaScript)
--Missing Custom Logs 
--Networking between docker-containers might be wonky - There has not been enough testing
+- Errors not handled (No Error-redirect or Error-page)
+- No custom limit to message- and name-length
+- No delete function
+- Missing Tests
+- Chat not scrolled down on refresh (due to not using JavaScript)
+- Missing Custom Logs 
+- Networking between docker-containers might be wonky - There has not been enough testing
 
 Not Tested:
--Manually sending POST-Requests
+- Manually sending POST-Requests
 
